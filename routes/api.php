@@ -2,8 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-//use App\Http\Controllers\Api\PostsController;
-
+use App\Http\Controllers\Api\PostsController;
+use App\Http\Controllers\Api\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,6 +28,6 @@ Route::prefix('v1')->group(function(){
     Route::apiResource('/blog',PostsController::class);
 });
 
-Route::post('/register', 'Api\AuthController@register');
+Route::post('/register',  [AuthController::class, 'register']);
 
 
